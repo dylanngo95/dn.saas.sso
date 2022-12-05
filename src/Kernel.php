@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace SSO;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\HttpKernel\Kernel as BaseKernel;

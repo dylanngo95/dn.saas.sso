@@ -53,12 +53,13 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "SSO\\": "src/",
+            "SSO\\App\\": "src/App/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "App\\Tests\\": "tests/"
+            "SSO\\App\\Tests\\": "src/App/tests/"
         }
     },
     "replace": {
