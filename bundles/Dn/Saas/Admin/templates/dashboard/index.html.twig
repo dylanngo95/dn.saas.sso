@@ -1,6 +1,19 @@
 {% extends '@Admin/partials/base.html.twig' %}
 
-{% block title %}Hello AdminController!{% endblock %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block stylesheets %}
+    <!-- owl.carousel css -->
+    <link href="{{ asset('/bundles/admin/libs/owl.carousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('/bundles/admin/libs/owl.carousel/assets/owl.theme.default.min.css') }}" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="{{ asset('/bundles/admin/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet"
+          type="text/css"/>
+    <!-- Icons Css -->
+    <link href="{{ asset('/bundles/admin/css/icons.min.css') }}" rel="stylesheet" type="text/css"/>
+    <!-- App Css-->
+    <link href="{{ asset('/bundles/admin/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
+{% endblock %}
 
 {% block body %}
     <!-- Begin page -->
@@ -28,7 +41,8 @@
                                             </div>
                                         </div>
                                         <div class="col-5 align-self-end">
-                                            <img src="{{ asset('bundles/admin/images/profile-img.png') }}" alt="" class="img-fluid">
+                                            <img src="{{ asset('bundles/admin/images/profile-img.png') }}" alt=""
+                                                 class="img-fluid">
                                         </div>
                                     </div>
                                 </div>
@@ -666,7 +680,8 @@
                                     <tr>
                                         <th scope="row">
                                             <div>
-                                                <img src="{{ asset('bundles/admin/images/product/img-7.png') }}" alt="" class="avatar-sm">
+                                                <img src="{{ asset('bundles/admin/images/product/img-7.png') }}" alt=""
+                                                     class="avatar-sm">
                                             </div>
                                         </th>
                                         <td>
@@ -680,7 +695,8 @@
                                     <tr>
                                         <th scope="row">
                                             <div>
-                                                <img src="{{ asset('bundles/admin/images/product/img-4.png') }}" alt="" class="avatar-sm">
+                                                <img src="{{ asset('bundles/admin/images/product/img-4.png') }}" alt=""
+                                                     class="avatar-sm">
                                             </div>
                                         </th>
                                         <td>
@@ -776,4 +792,13 @@
     <!-- END layout-wrapper -->
     {{ include('@Admin/partials/right-sidebar.html.twig') }}
     {{ include('@Admin/partials/vendor-scripts.html.twig') }}
+{% endblock %}
+
+{% block lazy_scripts %}
+    <!-- apexcharts -->
+    <script src="{{ asset('bundles/admin/libs/apexcharts/apexcharts.min.js') }}"></script>
+    <!-- dashboard init -->
+    <script src="{{ asset('bundles/admin/js/pages/dashboard.init.js') }}"></script>
+    <!-- App js -->
+    <script src="{{ asset('bundles/admin/js/app.js') }}"></script>
 {% endblock %}

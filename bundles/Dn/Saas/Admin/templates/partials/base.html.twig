@@ -2,33 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}Admin{% endblock %}</title>
-    <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+
     {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <!-- Block stylesheets -->
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
         <!-- Bootstrap Css -->
-        <link href="{{ asset('bundles/admin/css/bootstrap.min.cs') }}s" id="bootstrap-style" rel="stylesheet" type="text/css"/>
+        <link href="{{ asset('bundles/admin/css/bootstrap.min.cs') }}s" id="bootstrap-style" rel="stylesheet"
+              type="text/css"/>
         <!-- Icons Css -->
         <link href="{{ asset('bundles/admin/css/icons.min.css') }}" rel="stylesheet" type="text/css"/>
         <!-- App Css-->
         <link href="{{ asset('bundles/admin/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css"/>
     {% endblock %}
 
+    <!-- Block javascripts -->
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
+    <!-- Block meta -->
+    {% block meta %}
+        <meta charset="utf-8"/>
+        <!-- Block title -->
+        <title>{% block title %}Admin{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content=Admin" name="description"/>
+        <meta content="Dylan" name="author"/>
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="{{ asset('/bundles/admin/images/favicon.ico') }}">
+    {% endblock %}
 </head>
 <body data-sidebar="dark">
+
+<!-- Block body -->
 {% block body %}{% endblock %}
-{% block lazy_scripts %}
-    <!-- apexcharts -->
-    <script src="{{ asset('bundles/admin/libs/apexcharts/apexcharts.min.js') }}"></script>
-    <!-- dashboard init -->
-    <script src="{{ asset('bundles/admin/js/pages/dashboard.init.js') }}"></script>
-    <!-- App js -->
-    <script src="{{ asset('bundles/admin/js/app.js') }}"></script>
-{% endblock %}
+<!-- Block lazy_css -->
+{% block lazy_css %}{% endblock %}
+<!-- Block lazy_scripts -->
+{% block lazy_scripts %}{% endblock %}
+
 </body>
 </html>
