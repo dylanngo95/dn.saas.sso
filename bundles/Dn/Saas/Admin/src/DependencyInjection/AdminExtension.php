@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dn\Saas\Admin\src\DependencyInjection;
+namespace Dn\Saas\Admin\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -19,12 +19,22 @@ class AdminExtension extends Extension
     {
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__ . '/../config/')
+            new FileLocator(__DIR__ . '/../../config/')
         );
         $loader->load('services.yaml');
 
         $configuration = $this->getConfiguration($configs, $container);
 
-        $config = $this->processConfiguration($configuration, $configs);
+        $this->processConfiguration($configuration, $configs);
+    }
+
+    /**
+     * This once to define bundle name and bundle config name /packages/dn_saas_admin.yaml
+     *
+     * @return string
+     */
+    public function getAlias(): string
+    {
+        return 'dn_saas_admin';
     }
 }

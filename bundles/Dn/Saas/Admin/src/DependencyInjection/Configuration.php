@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Dn\Saas\Admin\src\DependencyInjection;
+namespace Dn\Saas\Admin\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
@@ -15,7 +15,14 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder('dn_saas_admin');
         /** @var ArrayNodeDefinition $rootNode */
-        $rootNode = $treeBuilder->getRootNode();
+        $treeBuilder->getRootNode()
+            ->children()
+                ->arrayNode('config')
+                    ->children()
+                        ->scalarNode('email')->end()
+                    ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

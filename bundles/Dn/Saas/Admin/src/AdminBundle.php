@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace Dn\Saas\Admin;
 
-use Dn\Saas\Admin\src\DependencyInjection\AdminExtension;
+use Dn\Saas\Admin\DependencyInjection\AdminExtension;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
 class AdminBundle extends AbstractBundle
@@ -17,7 +19,6 @@ class AdminBundle extends AbstractBundle
         }
         return $this->extension;
     }
-
 
     public function getPath(): string
     {
