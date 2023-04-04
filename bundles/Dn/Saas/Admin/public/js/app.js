@@ -19,18 +19,18 @@ File: Main Js File
     function setLanguage(lang) {
         if (document.getElementById("header-lang-img")) {
             if (lang == 'en') {
-                document.getElementById("header-lang-img").src = "/images/flags/us.jpg";
+                document.getElementById("header-lang-img").src = "/bundles/admin/images/flags/us.jpg";
             } else if (lang == 'sp') {
-                document.getElementById("header-lang-img").src = "/images/flags/spain.jpg";
+                document.getElementById("header-lang-img").src = "/bundles/admin/images/flags/spain.jpg";
             }
             else if (lang == 'gr') {
-                document.getElementById("header-lang-img").src = "/images/flags/germany.jpg";
+                document.getElementById("header-lang-img").src = "/bundles/admin/images/flags/germany.jpg";
             }
             else if (lang == 'it') {
-                document.getElementById("header-lang-img").src = "/images/flags/italy.jpg";
+                document.getElementById("header-lang-img").src = "/bundles/admin/images/flags/italy.jpg";
             }
             else if (lang == 'ru') {
-                document.getElementById("header-lang-img").src = "/images/flags/russia.jpg";
+                document.getElementById("header-lang-img").src = "/bundles/admin/images/flags/russia.jpg";
             }
             localStorage.setItem('language', lang);
             language = localStorage.getItem('language');
@@ -240,31 +240,31 @@ File: Main Js File
             $("#dark-mode-switch").prop("checked", false);
             $("#rtl-mode-switch").prop("checked", false);
             $("#dark-rtl-mode-switch").prop("checked", false);
-            $("#bootstrap-style").attr('href', '/css/bootstrap.min.css');
-            $("#app-style").attr('href', '/css/app.min.css');
+            $("#bootstrap-style").attr('href', '/bundles/admin/css/bootstrap.min.css');
+            $("#app-style").attr('href', '/bundles/admin/css/app.min.css');
             sessionStorage.setItem("is_visited", "light-mode-switch");
         } else if ($("#dark-mode-switch").prop("checked") == true && id === "dark-mode-switch") {
             $("html").removeAttr("dir");
             $("#light-mode-switch").prop("checked", false);
             $("#rtl-mode-switch").prop("checked", false);
             $("#dark-rtl-mode-switch").prop("checked", false);
-            $("#bootstrap-style").attr('href', '/css/bootstrap-dark.min.css');
-            $("#app-style").attr('href', '/css/app-dark.min.css');
+            $("#bootstrap-style").attr('href', '/bundles/admin/css/bootstrap-dark.min.css');
+            $("#app-style").attr('href', '/bundles/admin/css/app-dark.min.css');
             sessionStorage.setItem("is_visited", "dark-mode-switch");
         } else if ($("#rtl-mode-switch").prop("checked") == true && id === "rtl-mode-switch") {
             $("#light-mode-switch").prop("checked", false);
             $("#dark-mode-switch").prop("checked", false);
             $("#dark-rtl-mode-switch").prop("checked", false);
-            $("#bootstrap-style").attr('href', '/css/bootstrap-rtl.min.css');
-            $("#app-style").attr('href', '/css/app-rtl.min.css');
+            $("#bootstrap-style").attr('href', '/bundles/admin/css/bootstrap-rtl.min.css');
+            $("#app-style").attr('href', '/bundles/admin/css/app-rtl.min.css');
             $("html").attr("dir", 'rtl');
             sessionStorage.setItem("is_visited", "rtl-mode-switch");
         } else if ($("#dark-rtl-mode-switch").prop("checked") == true && id === "dark-rtl-mode-switch") {
             $("#light-mode-switch").prop("checked", false);
             $("#rtl-mode-switch").prop("checked", false);
             $("#dark-mode-switch").prop("checked", false);
-            $("#bootstrap-style").attr('href', '/css/bootstrap-dark-rtl.min.css');
-            $("#app-style").attr('href', '/css/app-dark-rtl.min.css');
+            $("#bootstrap-style").attr('href', '/bundles/admin/css/bootstrap-dark-rtl.min.css');
+            $("#app-style").attr('href', '/bundles/admin/css/app-dark-rtl.min.css');
             $("html").attr("dir", 'rtl');
             sessionStorage.setItem("is_visited", "dark-rtl-mode-switch");
         }
