@@ -35,6 +35,6 @@ services:
     Symfony\Component\HttpFoundation\Session\Storage\Handler\RedisSessionHandler:
         arguments:
             - '@Redis'
-            - prefix: session_local_
+            - prefix: ss_
             # The time to live in seconds.
-            - ttl: 3600
+            - ttl: 60
